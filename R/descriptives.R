@@ -112,7 +112,7 @@ DescriptivesInternal <- function(jaspResults, dataset, options) {
   if (options$boxPlot) {
     if (is.null(jaspResults[["boxPlot"]])) {
       jaspResults[["boxPlot"]] <- createJaspContainer(gettext("Boxplots"))
-      jaspResults[["boxPlot"]]$dependOn(c("boxPlot", "splitBy"))
+      jaspResults[["boxPlot"]]$dependOn(c("boxPlot", "splitBy", "variables"))
       jaspResults[["boxPlot"]]$position <- 7
     }
 
@@ -135,7 +135,7 @@ DescriptivesInternal <- function(jaspResults, dataset, options) {
         else # only one Q-Q Plot
           gettext("Q-Q Plot")
       )
-      jaspResults[["QQPlots"]]$dependOn(c("qqPlot", "splitBy"))
+      jaspResults[["QQPlots"]]$dependOn(c("qqPlot", "splitBy", "variables"))
       jaspResults[["QQPlots"]]$position <- 8
     }
     QQPlots <- jaspResults[["QQPlots"]]
@@ -174,7 +174,7 @@ DescriptivesInternal <- function(jaspResults, dataset, options) {
   if (options$pieChart) {
     if (is.null(jaspResults[["pieCharts"]])) {
       jaspResults[["pieCharts"]] <- createJaspContainer(gettext("Pie charts"))
-      jaspResults[["pieCharts"]]$dependOn(c("splitBy", "pieChart", "colorPalette"))
+      jaspResults[["pieCharts"]]$dependOn(c("splitBy", "pieChart", "colorPalette", "variables"))
       jaspResults[["pieCharts"]]$position <- 9
     }
 
@@ -199,7 +199,7 @@ DescriptivesInternal <- function(jaspResults, dataset, options) {
   if (options[["stemAndLeaf"]]) {
     if (is.null(jaspResults[["stemAndLeaf"]])) {
       jaspResults[["stemAndLeaf"]] <- createJaspContainer(gettext("Stem and Leaf"))
-      jaspResults[["stemAndLeaf"]]$dependOn(c("splitBy", "stemAndLeaf", "stemAndLeafScale"))
+      jaspResults[["stemAndLeaf"]]$dependOn(c("splitBy", "stemAndLeaf", "stemAndLeafScale", "variables"))
       jaspResults[["stemAndLeaf"]]$position <- 11
     }
 
@@ -222,7 +222,7 @@ DescriptivesInternal <- function(jaspResults, dataset, options) {
       jaspResults[["scatterPlots"]]$dependOn(c(
         "splitBy", "scatterPlot", "scatterPlotGraphTypeAbove", "scatterPlotGraphTypeRight", "scatterPlotRegressionLine",
         "scatterPlotRegressionLineCi", "scatterPlotRegressionLineCiLevel", "scatterPlotRegressionLineType", "scatterPlotLegend",
-        "colorPalette"
+        "colorPalette", "variables"
       ))
       jaspResults[["scatterPlots"]]$position <- 10
     }
@@ -233,7 +233,7 @@ DescriptivesInternal <- function(jaspResults, dataset, options) {
   if (options$intervalPlot) {
     if (is.null(jaspResults[["IntervalPlots"]])) {
       jaspResults[["IntervalPlots"]] <- createJaspContainer(gettext("Interval plots"))
-      jaspResults[["IntervalPlots"]]$dependOn(c("intervalPlot", "splitBy"))
+      jaspResults[["IntervalPlots"]]$dependOn(c("intervalPlot", "splitBy", "variables"))
       jaspResults[["IntervalPlots"]]$position <- 12
     }
 
@@ -251,7 +251,7 @@ DescriptivesInternal <- function(jaspResults, dataset, options) {
   if (options[["dotPlot"]]) {
     if (is.null(jaspResults[["DotPlots"]])) {
       jaspResults[["DotPlots"]] <- createJaspContainer(gettext("Dot Plots"))
-      jaspResults[["DotPlots"]]$dependOn(c("splitBy", "dotPlot"))
+      jaspResults[["DotPlots"]]$dependOn(c("splitBy", "dotPlot", "variables"))
       jaspResults[["DotPlots"]]$position <- 13
     }
 
@@ -288,7 +288,7 @@ DescriptivesInternal <- function(jaspResults, dataset, options) {
   if (options[["paretoPlot"]]) {
     if (is.null(jaspResults[["paretoPlots"]])) {
       jaspResults[["paretoPlots"]] <- createJaspContainer(gettext("Pareto Plots"))
-      jaspResults[["paretoPlots"]]$dependOn(c("paretoPlot", "splitBy", "paretoPlotRule", "paretoPlotRuleCi"))
+      jaspResults[["paretoPlots"]]$dependOn(c("paretoPlot", "splitBy", "paretoPlotRule", "paretoPlotRuleCi", "variables"))
       jaspResults[["paretoPlots"]]$position <- 15
     }
 
